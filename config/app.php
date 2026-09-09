@@ -287,6 +287,7 @@ return [
         'youdao',
         'bk_ai',
         'gd_migrate_image_paths',
+        'mcp',
     ],
 
     // html hook ignore dirs

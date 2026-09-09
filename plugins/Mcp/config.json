@@ -1,0 +1,18 @@
+{
+    "code": "mcp",
+    "name": {
+        "zh_cn": "MCP 服务 / AI 商城管理",
+        "en": "MCP Server / AI Store Management"
+    },
+    "description": {
+        "zh_cn": "为 AI 智能体提供 MCP 接口，实现商品搜索、资料搬运、翻译、定价、发布等自动化管理。提供 /mcp 端点与后台管理页。",
+        "en": "MCP endpoint for AI agents to manage products: search, import, translate, price, publish. Includes /mcp endpoint and admin panel."
+    },
+    "type": "feature",
+    "version": "v1.0.0",
+    "icon": "/image/logo.svg",
+    "author": {
+        "name": "hohohahei918",
+        "email": ""
+    }
+}
