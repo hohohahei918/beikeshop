@@ -84,6 +84,13 @@ class Kernel extends HttpKernel
             'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
+
+        'mcp'             => [
+            \App\Http\Middleware\SetAppTimezone::class,
+            \Beike\MCP\Http\Middleware\AuthenticateWithAdminToken::class,
+            'throttle:api',
+            \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        ],
     ];
 
     /**
