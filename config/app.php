@@ -197,6 +197,7 @@ return [
         Beike\AdminAPI\Providers\AdminAPIServiceProvider::class,
         Beike\Hook\HookServiceProvider::class,
         Beike\Facades\BeikeHttp\BeikeHttpServiceProvider::class,
+        Beike\MCP\Providers\McpServiceProvider::class,
     ],
 
     /*
