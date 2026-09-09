@@ -57,6 +57,16 @@ class ProductController
             'relations' => ProductRepo::getProductsByIds($relationIds)->jsonSerialize(),
         ];
 
+        // MCP 增强：附加商品分类与全语言描述，供智能体 MCP 服务做无损回写（改价/上下架/翻译）
+        $data['product']['categories']    = $product->categories()->pluck('category_id')->toArray();
+        $data['product']['descriptions']  = $product->descriptions()
+            ->get(['locale', 'name', 'summary', 'content', 'meta_title', 'meta_description', 'meta_keywords'])
+            ->keyBy('locale');
+        // MCP 增强：原始 SKU（含成本价），供定价/改价回写使用
+        $data['product']['skus_detail']   = $product->skus()
+            ->get(['id', 'sku', 'model', 'price', 'origin_price', 'cost_price', 'quantity', 'is_default'])
+            ->keyBy('id');
+
         return hook_filter('admin_api.product.show.data', $data);
     }
 
